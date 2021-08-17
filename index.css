@@ -1,0 +1,43 @@
+*{
+  margin:0;
+  padding:0;  
+  box-sizing: border-box;
+}
+
+body{
+   background-color: #ffc600;
+   font-size: 20px;
+   margin:auto 35%;
+
+}
+
+input{
+  width:100%;
+  padding:20px;
+}
+
+.container{
+  position:relative;
+  border:10px solid #F7F7F7;
+  max-width:400px;
+  top:70px;
+  left:50px;
+}
+
+ul{
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+
+
+
+li{
+  list-style:none;
+  background-color:#F7F7F7;
+  padding: 10px;
+}
+
+.color{
+  background-color: #ffc600;
+}
