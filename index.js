@@ -2,6 +2,7 @@ const api = 'https://gist.githubusercontent.com/Miserlou/c5cd8364bf9b2420bb29/ra
 const search= document.getElementById('search');
 const matchList=document.getElementById('matchList')
 
+// added backgorund color to the match text
 function replaceBG(regex,searchText){ 
   return searchText.replace(regex,`<span class="color">${searchText[0].toUpperCase()+searchText.substring(1)}</span>`);
 }
