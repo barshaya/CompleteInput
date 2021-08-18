@@ -3,8 +3,8 @@ const search= document.getElementById('search');
 const matchList=document.getElementById('matchList')
 
 // added backgorund color to the match text
-function replaceBG(regex,searchText){ 
-  return searchText.replace(regex,`<span class="color">${searchText[0].toUpperCase()+searchText.substring(1)}</span>`);
+function replaceBG(regex,match,searchText){ 
+    return match.replace(regex,`<span class="color">${(match.match(regex))}</span>`);
 }
 
 
@@ -26,8 +26,8 @@ async function searchLocations(searchText){
   if(matches.length>0){
     const html=matches.map(match => {
     const regex=new RegExp(`^${searchText}`,'gi');
-    const cityname=replaceBG(regex,match.city);
-    const statename=replaceBG(regex,match.state);
+    const cityname=replaceBG(regex,match.city,searchText);
+    const statename=replaceBG(regex,match.state,searchText);
         return ` 
         <li>
         ${cityname}, ${statename}
