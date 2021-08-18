@@ -19,7 +19,7 @@ input{
 .container{
   position:relative;
   border:10px solid #F7F7F7;
-  max-width:400px;
+  width:400px;
   top:70px;
   left:50px;
 }
@@ -27,7 +27,6 @@ input{
 ul{
   margin: 0;
   padding: 0;
-  position: relative;
 }
 
 

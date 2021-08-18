@@ -2,6 +2,11 @@ const api = 'https://gist.githubusercontent.com/Miserlou/c5cd8364bf9b2420bb29/ra
 const search= document.getElementById('search');
 const matchList=document.getElementById('matchList')
 
+function replaceBG(regex,searchText){ 
+  return searchText.replace(regex,`<span class="color">${searchText[0].toUpperCase()+searchText.substring(1)}</span>`);
+}
+
+
 async function searchLocations(searchText){ 
   const res=await fetch(api);
   const locations=await res.json();  
@@ -20,8 +25,8 @@ async function searchLocations(searchText){
   if(matches.length>0){
     const html=matches.map(match => {
     const regex=new RegExp(`^${searchText}`,'gi');
-    const cityname=match.city.replace(regex,`<span class="color">${searchText}</span>`);
-    const statename=match.state.replace(regex,`<span class="color">${searchText}</span>`);
+    const cityname=replaceBG(regex,match.city);
+    const statename=replaceBG(regex,match.state);
         return ` 
         <li>
         ${cityname}, ${statename}
@@ -29,7 +34,6 @@ async function searchLocations(searchText){
     }).join('');
     matchList.innerHTML=html;
   }
-
 }
 
 search.addEventListener('input',()=>searchLocations(search.value));
